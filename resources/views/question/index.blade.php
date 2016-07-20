@@ -12,7 +12,7 @@
 			{!! Form::text('question', null, array('class' => 'form-control')) !!}
 		</div>
 
-		{!! Form::submit('Submit', array('class' => 'btn btn-success')) !!}
+		{!! Form::submit('Submit', array('class' => 'btn btn-default')) !!}
 
 	@else
 		You have to login First.
@@ -25,7 +25,7 @@
 		<ul class="list-group">
 			@foreach($questions as $question)
 
-					<a href="{{ route('question', ['id' => $question->id]) }}" class="list-group-item">{{ $question->question }} by {{ $question->user_id }}</a>
+					<a href="{{ route('question', ['id' => $question->id]) }}" class="list-group-item">{{ $question->question }} by {{ $question->user_id }} <a href="{{route('edit', ['id' => $question->id])}}"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></a>
 
 			@endforeach
 		</ul>

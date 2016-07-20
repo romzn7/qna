@@ -13,4 +13,7 @@ class User extends Model implements \Illuminate\Contracts\Auth\Authenticatable
    public function question(){
       return $this->hasMany('Question');
    }
+   public function answer(){
+      return $this->hasMany('Answer');
+   }
 }

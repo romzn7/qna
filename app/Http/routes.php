@@ -57,6 +57,21 @@ Route::group(['middleware' => ['web']], function () {
 					'as' => 'ask', 'uses' => 'question\QuestionController@postQuestion'
 				]);
 
+				Route::get('your-questions', [
+					'as' => 'your-questions', 'uses' => 'question\QuestionController@getYourQuestion'
+				]);
+
+				Route::get('/{id}/edit', [
+					'as' => 'edit', 'uses' => 'question\QuestionController@getEditQuestion'
+				]);
+
+				Route::post('/edit', [
+					'as' => 'edited', 'uses' => 'question\QuestionController@postEditQuestion'
+				]);
+
+				Route::post('answer',[
+					'as' => 'answer', 'uses' => 'answer\AnswerController@postAnswerSubmit'
+				]);
 
 			});
 
